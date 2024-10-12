@@ -17,7 +17,8 @@ Este repositório contém implementações dos seguintes métodos numéricos:
 
 == Integração Númerica ==
 - Trapézio
-
+- Simpson 1/3
+- Simpson 3/8
   
 ---
 
@@ -62,6 +63,8 @@ This repository includes implementations of the following numerical methods:
 
 == Numerical Integration ==
 - Trapezoidal Rule
+- Simpson 1/3
+- Simpson 3/8
 
 ---
 

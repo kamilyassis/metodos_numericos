@@ -1,44 +1,33 @@
-'''
-Quando usar a integração Númerica?
+f = lambda x: 2 * x + 5
 
-- A função não é conhecida
-OU
-- A função é muito díficil
-OU
-- A função é não-integrável
-
-
-Pré-requisito Trapezio (aprox por reta):
-
-- A tabela de coordenadas (x, y) em um intervalo [a, b]
-OU 
-- Uma função f(x) conhecida para criarmos a tabela de coordenadas
-'''
-
-class trapezio:
-
-    def __init__(self, f):
-        self.f = f
-
-    def trapezio_simples(self, a, b, f):
-        return (b-a)*(f(a)+f(b))/2
+def trapezio(x):
     
-    def trapezio_composto(self, a, b, n, f):
-        h = (b-a)/n
-        s = 0
-        for i in range(1, n):
-        
-            s += f(a+i*h)
-        
-        return h*(f(a)+2*s+f(b))/2
+    h = x[-1] - x[0]
+    b = (f(x[0]) + f(x[-1])) / 2
     
+    return b * h
 
-# Exemplo de uso
-f = lambda x: 3*x/10 + 50
+def trapezio_repetido(x):
 
-t = trapezio(f)
+    a = x[0]
+    b = x[-1]
+    n = len(x) - 1
+    
+    h = (b - a) / n
+    
+    soma = f(a) + f(b)
+    
+    for i in range(1, n):
 
-print(t.trapezio_simples(0, 30, f))
+        soma += 2 * f(x[i])
 
-#ajustar o composto
-print(t.trapezio_composto(0, 30, 1000, f))
+    return soma * h / 2
+
+#lista de pontos
+x = [1, 2, 3, 4]
+
+print("função associada: 2x + 5")
+print("lista de X's: ", x)
+print("lista de Y's: ", [f(i) for i in x])
+print("Integração por Trapezio Simples: ", trapezio(x))
+print("Integração por Trapezio Repetido: ", trapezio_repetido(x))
