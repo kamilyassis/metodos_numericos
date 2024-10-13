@@ -1,5 +1,3 @@
-f = lambda x: 2 * x + 5
-
 def simpson3_8(x):
         
     if len(x) == 4:

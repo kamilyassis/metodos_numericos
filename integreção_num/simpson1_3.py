@@ -1,5 +1,3 @@
-f = lambda x: 2 * x + 5
-
 def simpson1_3(x):
         
     if len(x) == 3:
@@ -34,7 +32,6 @@ def simpson1_3_repetido(x):
     
     else:
         print("Número de pontos inválido. Utilize múltiplos de 3, ou outro método.")
-
 
 
 f = lambda x: 2 * x + 5
